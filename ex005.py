@@ -1,19 +1,14 @@
-import math
-#Exercício Python 
-# 006: Crie um algoritmo que leia um número e mostre o seu dobro, triplo e raiz quadrada.
+'''Exercício Python 005: Faça um programa que leia um número Inteiro e mostre na tela o seu sucessor e seu antecessor.'''
 def leia_int(txt):
     while True:
         try:
             n = int(input(txt))
-        except (ValueError, KeyboardInterrupt):
-            print("Erro!Digite valores inteiros.")
+        except ValueError:
+            print("Erro! Por favor digite um número inteiro: ")
+        except KeyboardInterrupt:
+            print("Operação cancelada pelo usúario.")
         else:
             return n
 
-
-n = leia_int("Digite um valor inteiro: ")
-dobro = n * 2
-triplo = n * 3
-raiz_quadrada = math.sqrt(n)
-
-print("O valor informado {},\nseu dobro {},\nseu triplo {},\nsua raiz quadrada {:.2f}".format(n, dobro, triplo, raiz_quadrada))
+num = leia_int("Digite um número inteiro: ")
+print("O número digitado foi {},  seu sucessor e {}, e seu antecessor e {}.".format(num, num+1, num-1))
